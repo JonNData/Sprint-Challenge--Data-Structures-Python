@@ -44,7 +44,14 @@ class LinkedList:
         We need to set the tail as the new head. 
         Each node's next should be their previous
         OR
-        since we don't have prev, the next node should be current
+        since we don't have self.prev, the next node should be current
         and the current should be the prev
         """
-  
+        if not self.head:
+            return
+        elif node.next_node:
+            self.reverse_list(node.next_node, node)
+        else:
+            self.head = node
+        # during recursion this changes the direction of all the next_nodes            
+        node.next_node = prev

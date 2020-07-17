@@ -1,3 +1,7 @@
+"""
+ What is the runtime complexity of this code?
+ Initially, with the nested for loops the complexity was O(n^2)
+ """
 import time
 
 start_time = time.time()
@@ -53,18 +57,31 @@ class BSTNode:
 duplicates = []  # Return the list of duplicates in this data structure
 bst = BSTNode("N")
 # Replace the nested for loops below with your improvements
-for name_1 in names_1:
-    bst.insert(name_1)
+# for name_1 in names_1:
+#     bst.insert(name_1)
 
-for name_2 in names_2:
-    if bst.contains(name_2):
-        duplicates.append(name_2)
+# for name_2 in names_2:
+#     if bst.contains(name_2):
+#         duplicates.append(name_2)
 
-end_time = time.time()
-print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
-print (f"runtime: {end_time - start_time} seconds")
+# end_time = time.time()
+# print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
+# print (f"runtime: {end_time - start_time} seconds")
 
 # ---------- Stretch Goal -----------
 # Python has built-in tools that allow for a very efficient approach to this problem
 # What's the best time you can accomplish?  Thare are no restrictions on techniques or data
 # structures, but you may not import any additional libraries that you did not write yourself.
+
+# First instinct is to try the set
+duplicates1 = []
+set_1 = set(names_1)
+set_2 = set(names_2)
+for name_2 in set_2:
+    if name_2 in set_1:
+        duplicates1.append(name_2)
+
+end_time = time.time()
+print (f"{len(duplicates1)} duplicates1:\n\n{', '.join(duplicates1)}\n\n")
+print (f"STRETCH runtime: {end_time - start_time} seconds")
+print("Why, yes, it does seem to be significantly faster!")
