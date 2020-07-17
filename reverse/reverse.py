@@ -39,4 +39,12 @@ class LinkedList:
         return False
 
     def reverse_list(self, node, prev):
-        pass
+        """
+        Sounds like a great time for recursion!
+        We need to set the tail as the new head. 
+        Each node's next should be their previous
+        OR
+        since we don't have prev, the next node should be current
+        and the current should be the prev
+        """
+  
